@@ -7,6 +7,6 @@ vim.api.nvim_create_autocmd("BufEnter", {
     desc = "Set Packer filetype",
     pattern = {"*.pkr.hcl"},
     callback = function()
-        vim.opt_local.filetype = "packer.hcl"
+        vim.opt_local.filetype = "hcl.packer"
     end
 })
