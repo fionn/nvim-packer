@@ -39,3 +39,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
         vim.opt_local.busy = vim.opt.busy:get() - 1
     end
 })
+
+vim.b.undo_ftplugin = (vim.b.undo_ftplugin or "")
+    .. "\n autocmd! packer_format BufWritePre"
