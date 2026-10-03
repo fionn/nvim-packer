@@ -31,6 +31,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     desc = "Format Packer",
     buffer = 0,
     callback = function(ev)
+        ---@type integer
         vim.opt_local.busy = vim.opt.busy:get() + 1
         vim.api.nvim__redraw({buf = ev.buf, flush = true})
         if not pcall(format, ev.buf) then
