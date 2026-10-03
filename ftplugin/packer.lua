@@ -9,7 +9,6 @@ local function format(buf)
     local result = vim.system({"packer", "fmt", "-"}, {stdin = lines}):wait()
 
     if result.code ~= 0 then
-        vim.opt_local.busy = vim.opt.busy:get() - 1
         vim.notify(("packer fmt exited with status %s: %s"):format(result.code,
             result.stderr), vim.log.levels.ERROR)
         return
