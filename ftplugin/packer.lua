@@ -6,7 +6,7 @@ local function format(buf)
     end
 
     local lines = vim.api.nvim_buf_get_lines(buf, 0, -1, true)
-    local result = vim.system({"packer", "fmt", "-"}, {stdin = lines}):wait()
+    local result = vim.system({"packer", "fmt", "-"}, {stdin = lines}):wait(10000)
 
     if result.code ~= 0 then
         vim.notify(("packer fmt exited with status %s: %s"):format(result.code,
